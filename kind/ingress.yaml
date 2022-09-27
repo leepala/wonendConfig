@@ -8,12 +8,13 @@ spec:
         - www.wonend.cn
       secretName: ssl-wonend
   rules:
-  - http:
-      paths:
-      - pathType: Prefix
-        path: "/"
-        backend:
-          service:
-            name: startpage-service
-            port:
-              number: 80
+    - host: www.wonend.cn
+      http:
+        paths:
+        - pathType: Prefix
+          path: "/"
+          backend:
+            service:
+              name: startpage-service
+              port:
+                number: 80
